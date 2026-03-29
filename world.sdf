@@ -1,0 +1,115 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="default">
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <physics type="ode">
+      <gravity>0 0 -9.8</gravity>
+      <max_step_size>0.001</max_step_size>
+      <real_time_update_rate>500</real_time_update_rate>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+
+    <model name="wall_north">
+      <static>true</static>
+      <pose>0 10 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>22 0.2 2</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>22 0.2 2</size></box></geometry></visual>
+      </link>
+    </model>
+    <model name="wall_south">
+      <static>true</static>
+      <pose>0 -10 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>22 0.2 2</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>22 0.2 2</size></box></geometry></visual>
+      </link>
+    </model>
+    <model name="wall_east">
+      <static>true</static>
+      <pose>10 0 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>0.2 20 2</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>0.2 20 2</size></box></geometry></visual>
+      </link>
+    </model>
+    <model name="wall_west">
+      <static>true</static>
+      <pose>-10 0 1 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>0.2 20 2</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>0.2 20 2</size></box></geometry></visual>
+      </link>
+    </model>
+
+    <model name="box_1">
+      <static>true</static>
+      <pose>2 0 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>1 1 1</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>1 1 1</size></box></geometry></visual>
+      </link>
+    </model>
+
+    <model name="box_2">
+      <static>true</static>
+      <pose>-3 2 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>1 1 1</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>1 1 1</size></box></geometry></visual>
+      </link>
+    </model>
+
+    <model name="box_3">
+      <static>true</static>
+      <pose>0 -4 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>1 1 1</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>1 1 1</size></box></geometry></visual>
+      </link>
+    </model>
+
+    <model name="box_4">
+      <static>true</static>
+      <pose>5 3 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>1 1 1</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>1 1 1</size></box></geometry></visual>
+      </link>
+    </model>
+
+    <model name="box_5">
+      <static>true</static>
+      <pose>-5 -3 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>1 1 1</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>1 1 1</size></box></geometry></visual>
+      </link>
+    </model>
+
+    <model name="box_6">
+      <static>true</static>
+      <pose>4 -5 0.5 0 0 0</pose>
+      <link name="link">
+        <collision name="collision"><geometry><box><size>1 1 1</size></box></geometry></collision>
+        <visual name="visual"><geometry><box><size>1 1 1</size></box></geometry></visual>
+      </link>
+    </model>
+
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <ros>
+        <namespace>/</namespace>
+      </ros>
+      <update_rate></update_rate>
+    </plugin>
+
+  </world>
+</sdf>

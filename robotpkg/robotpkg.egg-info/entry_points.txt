@@ -1,0 +1,6 @@
+[console_scripts]
+brain = robotpkg.brain:main
+hello_node = robotpkg.hello_node:main
+listener_node = robotpkg.listener_node:main
+tf_broadcaster = robotpkg.tf_broadcaster:main
+

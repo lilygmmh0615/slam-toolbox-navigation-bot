@@ -1,0 +1,46 @@
+slam_toolbox:
+  ros__parameters:
+    # Frames
+    base_frame: base_link
+    odom_frame: odom
+    map_frame: map
+    scan_frame: lidar_link
+    scan_topic: /scan
+    # scan_frame is not a valid slam_toolbox param; frame is read from LaserScan header
+    use_scan_matching: true
+    publish_tf: true
+
+    # Mode — switch to 'mapping' to build a new map, 'localization' to use saved map
+    mode: localization
+    map_file_name: /workspaces/Robot/my_map
+    map_start_at_dock: true
+
+    # Time
+    use_sim_time: true
+
+    # Map update settings
+    resolution: 0.1
+    max_laser_range: 8.0
+    minimum_travel_distance: 0.3
+    minimum_travel_heading: 0.5
+    map_update_interval: 0.5
+    throttle_scans: 1
+    message_filter_buffer_size: 50
+
+    # TF timing
+    transform_timeout: 0.1
+    tf_buffer_duration: 5.0
+    transform_publish_period: 0.05
+
+    # Scan matching
+    minimum_score: 0.5
+    link_match_minimum_response_fine: 0.5
+    link_scan_maximum_distance: 1.5
+
+    # Loop closure
+    loop_search_maximum_distance: 3.0
+    do_loop_closing: false
+
+    stack_size_to_use: 40000000
+    solver_plugin: solver_plugins::CeresSolver
+    optimization_problem_solver: TRADITIONAL

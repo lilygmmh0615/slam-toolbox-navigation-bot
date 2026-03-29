@@ -1,0 +1,23 @@
+{
+    "name": "ROS 2 Humble Dev",
+    "image": "osrf/ros:humble-desktop",
+    "forwardPorts": [8765],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-python.python",
+                "ms-iot.vscode-ros"
+            ]
+        }
+    },
+    "containerEnv": {
+        "DISPLAY": "host.docker.internal:0",
+        "LIBGL_ALWAYS_INDIRECT": "0"
+    },
+    "runArgs": [
+        "--net=host",
+        "--privileged"
+    ],
+    "postCreateCommand": "sudo apt update && sudo apt install -y python3-pip ros-humble-foxglove-bridge ros-humble-gazebo-ros-pkgs ros-humble-slam-toolbox && echo 'source /opt/ros/humble/setup.bash && source /workspaces/Robot/install/setup.bash && export ROS_LOCALHOST_ONLY=1' >> ~/.bashrc && source ~/.bashrc"
+}
