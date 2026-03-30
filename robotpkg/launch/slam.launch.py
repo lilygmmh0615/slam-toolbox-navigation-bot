@@ -16,8 +16,9 @@ def generate_launch_description():
             Node(
                 package='slam_toolbox',
                 # for mapping use this,
-                # executable='async_slam_toolbox_node',
-                executable='localization_slam_toolbox_node',
+                executable='async_slam_toolbox_node',
+                # for localization use this,
+                # executable='localization_slam_toolbox_node',
                 parameters=[SLAM_CONFIG, {'use_sim_time': True}],
                 output='screen',
             )

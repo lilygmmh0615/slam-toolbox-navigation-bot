@@ -11,7 +11,7 @@ slam_toolbox:
     publish_tf: true
 
     # Mode — switch to 'mapping' to build a new map, 'localization' to use saved map
-    mode: localization
+    mode: mapping
     map_file_name: /workspaces/Robot/my_map
     map_start_at_dock: true
 
